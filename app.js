@@ -52,3 +52,27 @@ function printStars(n) {
   }
 }
 printStars(5);
+
+function ArraySum() {
+  let arr = [];
+  for (let i = 0; i < arguments.length; i++) {
+    arr.push(arguments[i]);
+  }
+  return arr.reduce((acc, item) => {
+    return acc + item;
+  }, 0);
+}
+console.log(ArraySum(1, 2, 3, 4, 5));
+
+//Write a code to print reverse output
+
+function reverseArray(array) {
+  var reversedArray = [];
+  for (var i = array.length - 1; i >= 0; i--) {
+    reversedArray.push(array[i]);
+  }
+  return reversedArray;
+}
+// var array = [1, 2, 3, 4, 5];
+var reversedArray = reverseArray([1, 2, 3, 4, 5]);
+console.log(reversedArray);
