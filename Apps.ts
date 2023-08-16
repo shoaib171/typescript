@@ -93,3 +93,14 @@ const post: PostData[] = [
   },
 ];
 console.log(post);
+
+function reverseArray(array: Array<Number>) {
+  var reversedArray = [];
+  for (var i = array.length - 1; i >= 0; i--) {
+    reversedArray.push(array[i]);
+  }
+  return reversedArray;
+}
+// var array = [1, 2, 3, 4, 5];
+var reversedArray = reverseArray([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+console.log(reversedArray);
