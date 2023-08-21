@@ -37,6 +37,7 @@ const readOnlyPerson: ReadOnlyPerson = {
 console.log(readOnlyPerson); //Output :{id:1, name: "Alice"}
 // This will result in a TypeScript error
 // readOnlyPerson.id = 2;
+
 // Function Signatures:
 // Interfaces can also describe function types, which define the shape of functions:
 interface MathFunctions {
@@ -45,3 +46,45 @@ interface MathFunctions {
 
 const subtract: MathFunctions = (x, y) => x - y;
 console.log(subtract(2, 10));
+
+// Extending Interfaces:
+// Interfaces can extend other interfaces, allowing you to create more specialized interfaces:
+interface Employee extends Persons {
+  employeeId: number;
+  department: string;
+}
+const Employees_Data: Employee = {
+  First_Name: "Joseph",
+  Last_Name: "crew",
+  age: 20,
+  address: "RTA",
+  employeeId: 12,
+  department: "IT",
+};
+console.log(Employees_Data);
+
+// Implementing Interfaces:
+// In addition to defining interfaces for objects, you can also implement interfaces in classes to ensure that the class adheres to the contract specified by the interface:
+interface Animals {
+  makeVoice(): void;
+  returnValueFunction(a: number, b: number): number;
+}
+
+class Dog implements Animals {
+  makeVoice = () => {
+    console.log("Woof");
+  };
+
+  soundCloud = (x: number, y: number) => {
+    const Operand = x + y;
+    return Operand;
+  };
+  returnValueFunction = (a: number, b: number) => {
+    let Total = a + b;
+    return Total;
+  };
+}
+const Results = new Dog();
+Results.makeVoice(); // Outputs: Woof
+console.log(Results.soundCloud(2, 3)); // Outputs:5
+console.log(Results.returnValueFunction(5, 5));

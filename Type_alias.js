@@ -76,3 +76,15 @@ fetchData(function (error, result) {
         console.log("Result:", result);
     }
 });
+var myCustomObject = {
+    property1: "Hey this is me",
+    property2: 42,
+};
+console.log(myCustomObject);
+var item = {
+    property1: "Hello",
+    property2: 42,
+    success: true,
+    message: "Operation successful",
+};
+console.log(item);

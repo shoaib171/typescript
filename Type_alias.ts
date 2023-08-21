@@ -144,3 +144,34 @@ fetchData((error, result) => {
     console.log("Result:", result);
   }
 });
+
+//Custom types in typescript
+//  you can create custom types using the type keyword. Custom types allow you to define your own type aliases, which can make your code more readable and expressive
+
+type CustomType = {
+  property1: string;
+  readonly property2: number;
+};
+
+const myCustomObject: CustomType = {
+  property1: "Hey this is me",
+  property2: 42,
+};
+console.log(myCustomObject);
+
+type Status = "active" | "inactive";
+
+type Result = {
+  success: boolean;
+  message: string;
+};
+
+type CombinedType = CustomType & Result;
+
+const item: CombinedType = {
+  property1: "Hello",
+  property2: 42,
+  success: true,
+  message: "Operation successful",
+};
+console.log(item);
