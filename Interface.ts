@@ -88,3 +88,73 @@ const Results = new Dog();
 Results.makeVoice(); // Outputs: Woof
 console.log(Results.soundCloud(2, 3)); // Outputs:5
 console.log(Results.returnValueFunction(5, 5));
+
+//Example Bank Transaction system using  interface
+
+interface Transactions {
+  PayeeAccountNumber: number;
+  PayerAccountNumber: number;
+}
+interface BankAccount {
+  AccountHolder: string;
+  AccountTitle: string;
+  isActive: Boolean;
+  OpeningAmount: number;
+  Balance: number;
+  transaction: Transactions[];
+}
+const Transactions_1: Transactions = {
+  PayeeAccountNumber: 9876,
+  PayerAccountNumber: 4555,
+};
+const Transactions_2: Transactions = {
+  PayeeAccountNumber: 9876,
+  PayerAccountNumber: 45677,
+};
+
+const AccountHolder_Information: BankAccount = {
+  AccountHolder: "Abdul_Rasheed",
+  AccountTitle: "Ghani Marble Factory",
+  isActive: true,
+  OpeningAmount: 250000,
+  Balance: 30000000,
+  transaction: [Transactions_1, Transactions_2],
+};
+console.log(AccountHolder_Information);
+
+//unions
+let variable: string | number;
+
+variable = "Hello"; // Valid
+variable = 42; // Valid
+// variable = true;    // Error, boolean is not part of the union
+
+// Function parameter with a union type
+function display(value: string | number | boolean) {
+  return value;
+}
+console.log(display("Hello"));
+console.log(display(45));
+console.log(display(true));
+
+function messagePrint(message: string) {
+  return message;
+}
+
+console.log(messagePrint("hey"));
+
+// unions with narrowing concept
+
+type Id = number | string;
+function PrintID(id: Id) {
+  // console.log(id.toUpperCase()); Face error when uncomment
+  //its face error because we change or set upperCase to string value so that's why how i can judge id is number or string then in Ts use Narrowing concept mean set condition on type defined e.g:
+
+  if (typeof id === "string") {
+    console.log(id.toUpperCase());
+  } else {
+    console.log(id);
+  }
+}
+PrintID("hello");
+PrintID(1);
