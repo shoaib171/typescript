@@ -150,11 +150,12 @@ function PrintID(id: Id) {
   // console.log(id.toUpperCase()); Face error when uncomment
   //its face error because we change or set upperCase to string value so that's why how i can judge id is number or string then in Ts use Narrowing concept mean set condition on type defined e.g:
 
-  if (typeof id === "string") {
-    console.log(id.toUpperCase());
-  } else {
-    console.log(id);
-  }
+  // if (typeof id === "string") {
+  //   console.log(id.toUpperCase());
+  // } else {
+  //   console.log(id);
+  // }
+    typeof id === "string" ? console.log(id.toUpperCase()) : console.log(id);
 }
 PrintID("hello");
 PrintID(1);

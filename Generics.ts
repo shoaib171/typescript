@@ -5,23 +5,23 @@
 
 // Example
 
-// function RollNumbers(arg: number) {
-//   console.log(arg);
-//   return arg;
-// }
-// RollNumbers(2);
+function RollNumbers(arg: number) {
+  console.log(arg);
+  return arg;
+}
+RollNumbers(2);
 
-// function RollStrings(arg: string) {
-//   console.log(arg);
-//   return arg;
-// }
-// RollStrings("hello");
+function RollStrings(arg: string) {
+  console.log(arg);
+  return arg;
+}
+RollStrings("hello");
 
-// function RollArrays(arg: any[]) {
-//   console.log(arg);
-//   return arg;
-// }
-// RollArrays([1, 2, 45]);
+function RollArrays(arg: any[]) {
+  console.log(arg);
+  return arg; 
+}
+RollArrays([1, 2, 45]);
 
 //simple Example to create Generic Functions
 function LogAnythingElse<T>(arg: T): T {
@@ -48,7 +48,7 @@ let NumbersData = new BoxData(200);
 console.log(stringData.getValues());
 console.log(NumbersData.getValues());
 
-//Generics interface
+//Generics interface its a best example to understand generics
 
 interface OldAge {
   age: number;
@@ -71,3 +71,4 @@ const playerData: players[] = [
 ];
 const Persons = OldestAge(playerData);
 console.log(Persons);
+
